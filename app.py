@@ -27,7 +27,7 @@ def get_response():
         prediction = co.chat(message=f'''
             I want to create a {course} course for {target} which has a duration of {duration}.
             Can you create a table of contents for it?
-            Give the output in strict json format:
+            Give the output in strict complete json format:
             {{
                 "courseTitle": "string",
                 "courseDescription": "string",
@@ -37,19 +37,19 @@ def get_response():
                     {{  
                         "moduleName": "string",
                         "subModules": ["strings"],
-                        "quiz": "strings"
+                        "quiz": "string"
                     }},
                     {{
                         "modulename": "string",
                         "submodules": ["strings"],
-                        "quiz": "strings"
+                        "quiz": "string"
                     }}
                 ]
             }}
-            where quiz should only be generated for whole module and not submodules, also if there are 2 modules then there should be 2 quizzes. The quiz should cover the concepts of all the submodules present in the module
+            where quiz should only be generated for whole module and not submodules, also create quiz for each module. The quiz should cover the concepts of all the submodules present in that module
         ''', model='command', connectors=[{"id": "web-search", "name": "Web Search", "created_at": "0001-01-01T00:00:00Z", "updated_at": "0001-01-01T00:00:00Z", "continue_on_failure": True}])
 
-        # print(prediction.text)
+        print(prediction.text)
 
 
         # Return the predicted text in JSON format
