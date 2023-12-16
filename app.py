@@ -75,7 +75,7 @@ def get_response():
         if response.status_code == 200:
             # Parse and print the response JSON
             response_json = response.json()
-            print(response_json["candidates"][0]["content"]["parts"][0]["text"][7:-3])
+            # print(response_json["candidates"][0]["content"]["parts"][0]["text"][7:-3])
             return (response_json["candidates"][0]["content"]["parts"][0]["text"][7:-3])
             # print(json.dumps(response_json, indent=2))
             # print(response_json)
