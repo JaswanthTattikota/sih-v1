@@ -47,16 +47,16 @@ def get_response():
                     {{  
                         "moduleName": "string",
                         "subModules": ["strings"],
-                        "quiz": "string"
+                        "quiz": "string" // just give the quiz description
                     }},
                     {{
                         "modulename": "string",
                         "submodules": ["strings"],
-                        "quiz": "string"
+                        "quiz": "string" // just give the quiz description
                     }}
                 ]
             }}
-            where quiz should only be generated for whole module and not submodules, also give quiz description for each module. The quiz description should cover the concepts of all the submodules present in that module
+            where quiz should only be generated for each module. The quiz description should cover the concepts of all the submodules present in that module
         '''
                         }
                     ]
